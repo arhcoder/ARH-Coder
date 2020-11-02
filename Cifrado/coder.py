@@ -33,17 +33,18 @@ for index in range(0, len(mensaje)):
             ncaracter = caracter + SUMA
         # Si es impar.
         else:
-            ncaracter = caracter + MULTI
-        
-    print(ncaracter)
+            ncaracter = caracter + MULTI  
 
     # Modifica ncaracter, para que entre dentro del rango de síbolos (0 - total).
     # (pasos - (total - inicio)) % total.
-        # if ncaracter > total - 1:
-            #ncaracter = (ncaracter - (total - caracter)) % total
-
-    # print(ncaracter)
+    if ncaracter > total - 1:
+        ncaracter = (ncaracter - (total - caracter)) % total
     
+    print(ncaracter)
     # Exluye los números {0, 7, ... 10, 13, 27, 128 ... 160}
-            
-# Genera el nuevo mensaje.
+    
+
+    # Genera el mensaje encriptado.
+    # mensaje[index] = str(mensaje.replace(mensaje[index], chr(ncaracter)))
+    
+print(mensaje)
