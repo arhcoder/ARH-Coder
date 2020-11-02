@@ -45,6 +45,6 @@ for index in range(0, len(mensaje)):
     
 
     # Genera el mensaje encriptado.
-    # mensaje[index] = str(mensaje.replace(mensaje[index], chr(ncaracter)))
+    # mensaje = str(mensaje.replace(mensaje[index], chr(ncaracter)))
     
 print(mensaje)
