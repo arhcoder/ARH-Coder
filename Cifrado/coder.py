@@ -17,26 +17,30 @@ mensaje = input("Ingrese el mensaje: ")
 for index in range(0, len(mensaje)):
     caracter = ord(mensaje[index])
 
-    # Si el número de caracter actual, es par.
-    if index % 2 == 0:
-        ncaracter = caracter + SUMA
-    else:
-        divisores = 0
-        for i in range (1, index):
-            if index % i:
-                divisores += 1
+    # Si el número de caracter actual, es primo.
+    divisores = 0
+    for i in range (1, index+1):
+        if index % i == 0:
+            divisores += 1
 
-        # Si el número de caracter actual, no es primo.
-        if divisores != 2:
-            ncaracter = caracter + MULTI
-        # Si el número de caracter actual, es primo.
+    # Si el número de caracter actual, es primo.
+    if divisores == 2 or index == 2:
+        ncaracter = caracter + LEN
+    # Si el número de caracter actual, no es primo.
+    else:
+        # Si es par.
+        if index % 2 == 0:
+            ncaracter = caracter + SUMA
+        # Si es impar.
         else:
-            ncaracter = caracter + LEN
-        print(ncaracter)
+            ncaracter = caracter + MULTI
+        
+    print(ncaracter)
+
     # Modifica ncaracter, para que entre dentro del rango de síbolos (0 - total).
     # (pasos - (total - inicio)) % total.
-        if ncaracter > total - 1:
-            ncaracter = (ncaracter - (total - caracter)) % total
+        # if ncaracter > total - 1:
+            #ncaracter = (ncaracter - (total - caracter)) % total
 
     # print(ncaracter)
     
