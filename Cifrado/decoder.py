@@ -4,7 +4,7 @@ NOusables = [0, 13, 27] + list(range(7, 11)) + list(range(128, 161))
 total = 55296 - len(NOusables)
 MENSAJE = ""
 
-password = input("Coloca la contrasñea: ")
+password = input("Coloca la contraseña: ")
 
 LEN = len(password)
 SUMA = 0
