@@ -4,16 +4,17 @@ NOusables = [0, 13, 27] + list(range(7, 11)) + list(range(128, 161))
 total = 55296 - len(NOusables)
 MENSAJE = ""
 
-password = input("Coloca la contraseña: ")
+print("\n| DESCIFRADOR |\n")
+
+# Lee el mensaje.
+mensaje = input("| Mensaje a descifrar: ")
+password = input("\n| Coloca la contraseña: ")
 
 LEN = len(password)
 SUMA = 0
 for i in range(0, LEN):
     SUMA += ord(password[i])
 MULTI = SUMA * LEN
-
-# Lee el mensaje.
-mensaje = input("Mensaje a descifrar: ")
 
 # Ciclo que analiza todos los caracteres del mensaje.
 for index in range(0, len(mensaje)):
@@ -53,5 +54,5 @@ for index in range(0, len(mensaje)):
     
     # Genera el mensaje encriptado.
     MENSAJE += chr(ncaracter)
-
-print(MENSAJE)
+print("\n\n| Mensaje descifrado:\n")
+print(MENSAJE+"\n\n")
