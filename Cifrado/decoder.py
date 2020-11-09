@@ -1,9 +1,13 @@
-import keys
+import arhcoder
+import encoder
+import coders
 
 def decode(code, password):
     message = ""
 
-    keys(password)
+    LEN = keyLEN(password)
+    SUMA = keySUMA(password)
+    MULTI = keyMULTI(LEN, SUMA)
 
     # Ciclo que analiza todos los caracteres del mensaje.
     for index in range(0, len(code)):
@@ -28,9 +32,9 @@ def decode(code, password):
                 pasos = MULTI
 
         # Considera los valores exclusivos {0, 7, ... 10, 13, 27, 128 ... 160}
-        for i in range(0, len(NOusables)):
+        for i in range(0, len(NO)):
             if caracter == total + i:
-                ncaracter = NOusables[i]
+                ncaracter = NO[i]
             else:
                 # Avanza la cantidad de pasos necesarios.
                 ncaracter = caracter

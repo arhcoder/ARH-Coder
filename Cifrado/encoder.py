@@ -1,9 +1,17 @@
-import keys
+import arhcoder
+import decoder
+import coders
+
+def keyLEN()
+def keySUMA()
+def keyMULTI()
 
 def encode(password, message):
     code = ""
 
-    keys(password)
+    LEN = keyLEN(password)
+    SUMA = keySUMA(password)
+    MULTI = keyMULTI(LEN, SUMA)
 
     # Ciclo que analiza todos los caracteres del mensaje.
     for index in range(0, len(message)):
@@ -40,5 +48,5 @@ def encode(password, message):
                 ncaracter = total + i
 
         # Genera el mensaje encriptado.
-        message += chr(ncaracter)
-    return message
+        code += chr(ncaracter)
+    return code
