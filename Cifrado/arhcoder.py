@@ -1,6 +1,6 @@
-import encoder
-import decoder
-import coders
+from os import system
+from encoder import encode
+from decoder import decode
 
 # Desarrollador: Alejandro Ramos Herrera (@arhcoder).
 # Licencia: Creative Commons - Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
@@ -8,8 +8,31 @@ import coders
 # Tiempo de desarrollo: X.
 # Propósito: Práctica y Entretenimiento.
 
-# S = {0, ..., 55295} - {0, 7, ... 10, 13, 27, 128 ... 160};
-NO = [0] + list(range(7, 11)) + [13, 27] + list(range(128, 161))
+option = 1
+print("\n\t  | ARH CODER |")
 
-# Total = 55,256;
-total = 55296 - len(NO)
+while option != 0:
+    print("__________________________________")
+    print("\n1: Encriptar un mensaje\n2: Descifrar un mensaje\n0: Salir\n")
+    option = int(input("Selecciona una opción: "))
+    system("cls")
+
+    if option == 1:
+        print("\n| CIFRADOR |\n")
+        password = input("| Crea una contraseña: ")
+        message = input("\n| Crea un mensaje: ")
+        print("\n||| Mensaje encriptado: ", encode(password, message))
+
+    elif option == 2:
+        print("\n| DESCIFRADOR |\n")
+        code = input("| Ingresa el mensaje: ")
+        password = input("\n| Coloca la contraseña: ")
+        print("\n||| Mensaje original: ", decode(code, password))
+
+    elif option == 0:
+        print("\nAdiós...")
+        
+    else:
+        print("\nError! Inténtalo de nuevo...")
+
+print("__________________________________")

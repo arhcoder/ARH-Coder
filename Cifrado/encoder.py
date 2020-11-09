@@ -1,10 +1,9 @@
-import arhcoder
-import decoder
-import coders
+from coders import keyLEN, keySUMA, keyMULTI
 
-def keyLEN()
-def keySUMA()
-def keyMULTI()
+# S = {0, ..., 55295} - {0, 7, ... 10, 13, 27, 128 ... 160};
+NO = [0] + list(range(7, 11)) + [13, 27] + list(range(128, 161))
+# Total = 55,256;
+total = 55296 - len(NO)
 
 def encode(password, message):
     code = ""
